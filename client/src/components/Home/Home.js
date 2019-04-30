@@ -10,10 +10,9 @@ class Home extends React.Component {
   fetchTrendingGifs = () => {
     fetch(`https://api.giphy.com/v1/gifs/trending?api_key=${process.env.REACT_APP_GIPHY_KEY}`)   
       .then(res => res.json())
-      .then(text => {
-        // this.setState({ trendingGifs: gifs, didLoad: true });
-        // console.log(this.state.trendingGifs);
-        console.log(text);
+      .then(gifs => {
+        this.setState({ trendingGifs: gifs, didLoad: true });
+        console.log(this.state.trendingGifs);        
       })
       .catch(error => {
         this.setState({ error, didLoad: false })
@@ -23,6 +22,7 @@ class Home extends React.Component {
 
   componentDidMount = () => {
     this.fetchTrendingGifs();
+    console.log(`trendingGifs is: ${this.state.trendingGifs}`)
   };
 
   render() {
@@ -39,7 +39,11 @@ class Home extends React.Component {
           </section>
     
           <main>
-            <h3>Content served</h3>
+            {trendingGifs.data.map(gifs => {
+              return (
+                <img src = {gifs.images.fixed_height_downsampled.url} key = {gifs.id} alt = {gifs.title} />
+              )
+            })}
           </main>
         </div>
       );
