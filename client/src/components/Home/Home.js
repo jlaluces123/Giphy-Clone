@@ -39,11 +39,11 @@ class Home extends React.Component {
           </section>
     
           <main>
-            {trendingGifs.data.map(gifs => {
-              return (
-                <img src = {gifs.images.fixed_height_downsampled.url} key = {gifs.id} alt = {gifs.title} />
-              )
-            })}
+            <section className = "gifs-container">
+              {trendingGifs.data.map(gifs => {                
+                return <img className = "animated-gif" src = {gifs.images.fixed_height_downsampled.url} key = {gifs.id} alt = {gifs.title} />                
+              })}
+            </section>
           </main>
         </div>
       );
