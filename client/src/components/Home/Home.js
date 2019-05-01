@@ -30,21 +30,26 @@ class Home extends React.Component {
     if (error) {
       return <div>Oh No's! There as been an Error!</div> /* We can make a component for this page later on */
     } else if (!didLoad) {
-      return <div>Gifs Comin' Right Up!</div>
+      return <div>Gifs Comin' Right Up!</div> /* We can make a component for this page later on */
     } else {
       return (
-        <div className = "block">
-          <section className = "section">
-            {/* Search Bar Component Goes Here */}
-          </section>
-    
+        <div className = "container">          
+  
           <main>
-            <section className = "section">
+            <section className = "list">
               {trendingGifs.data.map(gifs => {                
-                return <img className = "section__img" src = {gifs.images.fixed_height_downsampled.url} key = {gifs.id} alt = {gifs.title} />                
+                return (
+                  <img 
+                    className = "list__item" 
+                    src = {gifs.images.fixed_height_downsampled.url} 
+                    key = {gifs.id} 
+                    alt = {gifs.title} 
+                  /> 
+                );               
               })}
             </section>
           </main>
+          
         </div>
       );
     };             
