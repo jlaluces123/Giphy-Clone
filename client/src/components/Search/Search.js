@@ -13,8 +13,7 @@ class Search extends React.Component {
     fetch(`https://api.giphy.com/v1/gifs/search?api_key=${process.env.REACT_APP_GIPHY_KEY}&q=${this.state.search}`)
       .then(res => res.json())
       .then(gifs => {
-        this.setState({ foundGifs: gifs, didSearch: true });   
-        console.log(this.state.foundGifs);
+        this.setState({ foundGifs: gifs, didSearch: true });           
       })
       .catch(err => this.setState({ error: err }));
   };
@@ -31,7 +30,7 @@ class Search extends React.Component {
   };
 
   render() { 
-    let { search, foundGifs, didSearch, error } = this.state;
+    let { search, error } = this.state;
     if (error) {
       return <h3>Error In Searching. Try again!</h3>
     } else {

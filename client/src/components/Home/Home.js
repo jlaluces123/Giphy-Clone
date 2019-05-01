@@ -11,13 +11,11 @@ class Home extends React.Component {
     fetch(`https://api.giphy.com/v1/gifs/trending?api_key=${process.env.REACT_APP_GIPHY_KEY}`)   
       .then(res => res.json())
       .then(gifs => {
-        this.setState({ trendingGifs: gifs, didLoad: true });
-        console.log(this.state.trendingGifs);        
+        this.setState({ trendingGifs: gifs, didLoad: true });              
       })
       .catch(error => {
-        this.setState({ error, didLoad: false })
-        console.log(error);
-      })     
+        this.setState({ error, didLoad: false })        
+      });  
   };
 
   componentDidMount = () => {
@@ -33,8 +31,7 @@ class Home extends React.Component {
       return <div>Gifs Comin' Right Up!</div> /* We can make a component for this page later on */
     } else {
       return (
-        <div className = "container">          
-  
+        <div className = "container">            
           <main>
             <section className = "list">
               {trendingGifs.data.map(gifs => {                
@@ -49,7 +46,6 @@ class Home extends React.Component {
               })}
             </section>
           </main>
-          
         </div>
       );
     };             
