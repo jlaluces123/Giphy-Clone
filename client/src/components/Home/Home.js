@@ -1,4 +1,5 @@
 import React from 'react';
+import "./Home.css";
 
 class Home extends React.Component {
   state = {
@@ -33,6 +34,7 @@ class Home extends React.Component {
       return (
         <div className = "container">            
           <main>
+            <h3 className = "container__title">Top 25 Trending Gifs!</h3>
             <section className = "list">
               {trendingGifs.data.map(gifs => {                
                 return (

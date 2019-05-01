@@ -1,0 +1,20 @@
+.container__title {
+  font-family: 'Anton', sans-serif;
+  text-align: center;
+  color: white;
+  font-size: 3rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: row;
+}
+
+.form__input {
+  width: 100%;
+}
+
+.form__submit {
+  background-color: crimson;
+  border: none;
+}
