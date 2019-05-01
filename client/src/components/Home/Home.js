@@ -33,15 +33,15 @@ class Home extends React.Component {
       return <div>Gifs Comin' Right Up!</div>
     } else {
       return (
-        <div className = "home-component-wrapper">
-          <section className = "search-bar">
+        <div className = "block">
+          <section className = "section">
             {/* Search Bar Component Goes Here */}
           </section>
     
           <main>
-            <section className = "gifs-container">
+            <section className = "section">
               {trendingGifs.data.map(gifs => {                
-                return <img className = "animated-gif" src = {gifs.images.fixed_height_downsampled.url} key = {gifs.id} alt = {gifs.title} />                
+                return <img className = "section__img" src = {gifs.images.fixed_height_downsampled.url} key = {gifs.id} alt = {gifs.title} />                
               })}
             </section>
           </main>
