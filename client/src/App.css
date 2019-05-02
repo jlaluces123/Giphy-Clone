@@ -69,3 +69,7 @@ table {
 .header {
 	padding: 10px 0px;
 }
+
+.block {
+	/* height: 100vh; */
+}

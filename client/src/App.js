@@ -17,7 +17,7 @@ function App() {
         <Navigation />
       </header>    
 
-      <main>
+      <main className = "block">
         <Route exact path = "/" component = {Home} />
         <Route path = "/trending" component = {Trending} />
         <Route path = "/search" component = {Root} />
