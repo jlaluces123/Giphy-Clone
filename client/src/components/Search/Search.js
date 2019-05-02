@@ -7,56 +7,22 @@ const searchIcon = (
   </svg>
 );
 
-class Search extends React.Component {
-  state = {
-    search: "",
-    foundGifs: [],
-    didSearch: false,
-    error: null
-  };
-
-  searchGif = () => {
-    fetch(`https://api.giphy.com/v1/gifs/search?api_key=${process.env.REACT_APP_GIPHY_KEY}&q=${this.state.search}`)
-      .then(res => res.json())
-      .then(gifs => {
-        this.setState({ foundGifs: gifs, didSearch: true });           
-      })
-      .catch(err => this.setState({ error: err }));
-  };
-
-  handleChange = event => {
-    event.preventDefault();
-    let { name, value } = event.target;
-    this.setState({ [name]: value });    
-  };
-
-  handleSubmit = event => {
-    event.preventDefault();
-    this.searchGif();
-  };
-
-  render() { 
-    let { search, error } = this.state;
-    if (error) {
-      return <h3>Error In Searching. Try again!</h3>
-    } else {
-      return ( 
-        <section>
-          <form className = "form" onSubmit = {this.handleSubmit}>
-            <input 
-              required
-              type = "text" 
-              name = "search" 
-              value = {search} 
-              onChange = {this.handleChange} 
-              className = "form__input" 
-            />
-            <button className = "form__submit" onClick = {this.handleSubmit}>{searchIcon}</button>
-          </form>                   
-        </section>
-      );
-    }       
-  };
+const Search = (props) => {
+  return (
+    <section>
+      <form className = "form" onSubmit = {props.handleSubmit}>
+        <input 
+          required
+          type = "text" 
+          name = "search" 
+          value = {props.search} 
+          onChange = {props.handleChange} 
+          className = "form__input" 
+        />
+        <button className = "form__submit" onClick = {props.handleSubmit}>{searchIcon}</button>
+      </form>                   
+    </section>
+  );
 };
  
 export default Search;
