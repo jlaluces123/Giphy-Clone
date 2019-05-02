@@ -1,0 +1,24 @@
+.menu {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.menu__item {
+  flex-grow: 0.05;
+}
+
+.menu__item + .menu__item {
+  margin-left: 1%;
+}
+
+.menu__link {
+  color: lightgrey;
+  text-decoration: none;  
+  text-transform: capitalize;  
+}
+
+.menu__link:hover {
+  color: white;
+  transition: 0.2s;
+}

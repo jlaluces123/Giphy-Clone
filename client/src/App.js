@@ -1,19 +1,27 @@
 import React from 'react';
 import './App.css';
 
+/* Dependency-Based Imports */
+import { Route } from "react-router-dom";
+
 /* Component Imports */
-import Home from "./components/Home/Home.js";
-import Search from "./components/Search/Search.js";
+import Trending from "./components/Trending/Trending.js";
 import Root from "./components/Search/Root.js";
+import Navigation from "./components/Navigation/Navigation.js";
+import Home from "./components/Home/Home.js";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header"> 
-        {/* <Search />       */}
-      </header>  
-      {/* <Home />     */}
-      <Root />
+      <header className="header">           
+        <Navigation />
+      </header>    
+
+      <main>
+        <Route exact path = "/" component = {Home} />
+        <Route path = "/trending" component = {Trending} />
+        <Route path = "/search" component = {Root} />
+      </main>      
     </div>
   );
 }

@@ -47,8 +47,25 @@ table {
 	border-spacing: 0;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Main Styling */
 .App {
 	background-color: #121212;
 	margin: 0 5%;
+}
+
+.header {
+	padding: 10px 0px;
 }
