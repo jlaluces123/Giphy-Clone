@@ -1,5 +1,9 @@
 import React from 'react';
 
+/*
+  - This will get rendered into the GifList.js
+  - "Image" prop will come from Root.js
+*/
 const GifItem = (image) => {
   return (
     <li className = "list__item">

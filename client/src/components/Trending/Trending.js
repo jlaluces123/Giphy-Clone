@@ -8,6 +8,7 @@ class Trending extends React.Component {
     trendingGifs: []
   };
 
+  /* Helper function to be used on componentMount: fetching data via the API, then setting the result to "this.state.trendingGifs" */
   fetchTrendingGifs = () => {
     fetch(`https://api.giphy.com/v1/gifs/trending?api_key=${process.env.REACT_APP_GIPHY_KEY}`)   
       .then(res => res.json())
@@ -20,6 +21,7 @@ class Trending extends React.Component {
       });  
   };
 
+  /* On Page Load: lets fetch the most trending GIFS */
   componentDidMount = () => {
     this.fetchTrendingGifs();
     console.log(`trendingGifs is: ${this.state.trendingGifs}`)
