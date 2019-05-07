@@ -61,6 +61,14 @@ table {
 
 
 /* Main Styling */
+p {
+	color: grey;
+	font-size: 1.2rem;
+	font-family: 'Anton', sans-serif;
+	letter-spacing: 0.8px;
+	text-transform: uppercase;
+}
+
 .App {
 	background-color: #121212;
 	margin: 0 5%;
@@ -68,8 +76,4 @@ table {
 
 .header {
 	padding: 10px 0px;
-}
-
-.block {
-	/* height: 100vh; */
 }

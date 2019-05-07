@@ -9,6 +9,7 @@ import Trending from "./components/Trending/Trending.js";
 import Root from "./components/Search/Root.js";
 import Navigation from "./components/Navigation/Navigation.js";
 import Home from "./components/Home/Home.js";
+import SingleGif from "./components/SingleGif/SingleGif.js";
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
       <main className = "block">
         <Route exact path = "/" component = {Home} />
         <Route path = "/trending" component = {Trending} />
-        <Route path = "/search" component = {Root} />
+        <Route path = "/search" component = {Root} />        
       </main>      
     </div>
   );

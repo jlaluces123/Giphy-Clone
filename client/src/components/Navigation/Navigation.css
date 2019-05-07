@@ -14,8 +14,8 @@
   item after the first instace
 */
 .menu__item + .menu__item {
-  margin-left: 1%;
-  margin-bottom: 3.5px;
+  margin-left: 0.5px;
+  margin-bottom: 2.5px;
 }
 
 .menu__link {
