@@ -1,6 +1,6 @@
 import React from 'react';
 import "./Navigation.css";
-import GiphyLogo from "../../assets/Giphy.svg";
+import GiphyLogo from "../../assets/giphy-word-logo.svg";
 
 /* Dependency Based Imports */
 import { Link } from "react-router-dom";
@@ -23,7 +23,7 @@ const Navigation = () => {
         <li className = "menu__item">
           <Link to = "/trending" className = "menu__link">Trending</Link>
         </li>
-        
+
       </ul>
     </section>
   );
