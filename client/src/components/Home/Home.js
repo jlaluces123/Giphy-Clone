@@ -22,9 +22,9 @@ class Home extends React.Component {
   };
 
   trendGifs = () => {
-    client.trending("gifs", {"limit": 10})
+    client.trending("gifs", {"limit": 4})
       .then(res => {
-        this.setState({ trendingGifs: res, didLoad: true});
+        this.setState({ trendingGifs: res.data, didLoad: true});
       })
       .catch(err => this.setState({ error: err }));
   };
@@ -62,6 +62,26 @@ class Home extends React.Component {
                       src = {stickers.images.fixed_height.url}
                       key = {stickers.id}
                       alt = "trending sticker"
+                    />
+                  )
+                })}  
+              </ul>
+            </section>  
+
+            <section>
+              <header className = "stickers-list__header">
+                  <p>Trending Gifs</p>
+                  <Link className = "stickers-list__link" to = "/trending/gifs">SEE ALL</Link>
+              </header>
+
+              <ul className = "gifs__list">
+                {trendingGifs.map(gifs => {
+                  return (
+                    <img
+                      className = "gifs__item"
+                      src = {gifs.images.fixed_height.url}
+                      key = {gifs.id}
+                      alt = "trending gif"
                     />
                   )
                 })}  
