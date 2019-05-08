@@ -61,6 +61,18 @@ table {
 
 
 /* Main Styling */
+main {
+	height: 100vh;
+}
+
+h1 {
+	font-family: 'Anton', sans-serif;
+	color: white;
+	font-size: 3rem;
+	margin-bottom: 60px;
+	text-align: center;
+}
+
 p {
 	color: grey;
 	font-size: 1.2rem;
@@ -75,5 +87,5 @@ p {
 }
 
 .header {
-	padding: 10px 0px;
+	padding: 10px 0px;	
 }

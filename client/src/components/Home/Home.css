@@ -1,3 +1,7 @@
+.home {
+  height: 100vh;
+}
+
 .stickers-list__header {
   display: flex;
   justify-content: space-between;
@@ -15,4 +19,12 @@
 .stickers__item {
   max-height: 100px;
   max-width: 100px;
+}
+
+
+.gifs__list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
