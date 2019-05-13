@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 let client = GphApiClient(process.env.REACT_APP_GIPHY_KEY);
 
 class Home extends React.Component {
-  state = { 
+  state = {
     didLoad: false,
     trendingStickers: [],
     trendingGifs: [],
@@ -19,16 +19,16 @@ class Home extends React.Component {
   };
 
   componentDidMount = () => {
-    this.setState({ didLoad: true });   
+    this.setState({ didLoad: true });
+    this.getDate();
     this.trendGifs();
     this.trendStickers();
-    this.getDate();    
     // AOS.init();
   };
 
   getDate = () => {
-    let today = new Date();  
-    this.setState({ date: today.getMonth(), day: today.getDay() });
+    let today = new Date();
+    this.setState({ date: today.getMonth(), day: today.getDate() });
   };
 
   trendGifs = () => {
@@ -42,19 +42,19 @@ class Home extends React.Component {
   trendStickers = () => {
     client.trending("stickers", {"limit": 13})
       .then(res => {
-        this.setState({ trendingStickers: res.data, didLoad: true });        
+        this.setState({ trendingStickers: res.data, didLoad: true });
       })
       .catch(err => this.setState({ error: err }));
   };
 
-  render() { 
-    let { didLoad, error, trendingStickers, trendingGifs, date, day } = this.state;    
-    
+  render() {
+    let { didLoad, error, trendingStickers, trendingGifs, date, day } = this.state;
+
     /* getDate() gives you a number, here I just want to transfer it into text for the h1 tag below */
     if (date === 4) {
-      date = "May"
+      date = "May";
     } else if (date === 5) {
-      date = "June"
+      date = "June";
     };
 
     if (error) {
@@ -63,7 +63,7 @@ class Home extends React.Component {
       return <div>Gifs Comin' Right Up!</div>
     } else {
       return (
-        <div className = "container"> 
+        <div className = "container">
           <main className = "home">
             <h1>Today {date} {day}</h1>
             <section>
@@ -83,9 +83,9 @@ class Home extends React.Component {
                       alt = "trending sticker"
                     />
                   )
-                })}  
+                })}
               </ul>
-            </section>  
+            </section>
 
             <section>
               <header className = "stickers-list__header">
@@ -103,15 +103,15 @@ class Home extends React.Component {
                       alt = "trending gif"
                     />
                   )
-                })}  
+                })}
               </ul>
-            </section>  
+            </section>
 
           </main>
         </div>
       );
-    }   
+    }
   };
 }
- 
+
 export default Home;
