@@ -65,9 +65,9 @@ class Home extends React.Component {
       return (
         <div className = "container">
           <main className = "home">
-            <h1>Today {date} {day}</h1>
+            <h1 style = {{ marginBottom: 0 }}>Today {date} {day}</h1>
             <section>
-              <header className = "stickers-list__header">
+              <header className = "caption stickers-list__header">
                   <p>Trending Stickers</p>
                   <Link className = "stickers-list__link" to = "/trending/stickers">SEE ALL</Link>
               </header>
@@ -88,7 +88,7 @@ class Home extends React.Component {
             </section>
 
             <section>
-              <header className = "stickers-list__header">
+              <header className = "caption stickers-list__header">
                   <p>Trending Gifs</p>
                   <Link className = "stickers-list__link" to = "/trending/gifs">SEE ALL</Link>
               </header>

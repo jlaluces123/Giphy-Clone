@@ -1,5 +1,12 @@
 .home {
-  height: 100vh;
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.caption {
+  margin-bottom: 10px;
 }
 
 .stickers-list__header {
