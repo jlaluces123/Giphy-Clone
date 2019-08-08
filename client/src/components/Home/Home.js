@@ -28,7 +28,8 @@ class Home extends React.Component {
 
   getDate = () => {
     let today = new Date();
-    this.setState({ date: today.getMonth(), day: today.getDate() });
+    console.log(today.getMonth());
+    this.setState({ date: today.getMonth() + 1, day: today.getDate() });
   };
 
   trendGifs = () => {
@@ -51,10 +52,10 @@ class Home extends React.Component {
     let { didLoad, error, trendingStickers, trendingGifs, date, day } = this.state;
 
     /* getDate() gives you a number, here I just want to transfer it into text for the h1 tag below */
-    if (date === 4) {
-      date = "May";
-    } else if (date === 5) {
-      date = "June";
+    if (date === 8) {
+      date = "August";
+    } else if (date === 9) {
+      date = "September";
     };
 
     if (error) {

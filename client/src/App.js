@@ -10,7 +10,7 @@ import Root from "./components/Search/Root.js";
 import Navigation from "./components/Navigation/Navigation.js";
 import Home from "./components/Home/Home.js";
 import StickersList from "./components/StickersList/StickersList.js";
-import SingleGif from "./components/SingleGif/SingleGif.js";
+// import SingleGif from "./components/SingleGif/SingleGif.js";
 
 function App() {
   return (
